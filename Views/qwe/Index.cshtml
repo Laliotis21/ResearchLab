@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ResearchLab_Library.Model.Member>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+    <h2>Index</h2>
+@using(Html.BeginForm("Index", "Members", FormMethod.Get))
+{
+    @Html.TextBox("searching")
+    <input type= "submit" value="submit"/>
+}
+<table>
+    <tr>
+        <th>Name</th><th>name</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(ModelItem => item.FirstName)</td>
+            <td>@Html.DisplayFor(ModelItem => item.LastName)</td>
+
+        </tr>
+    }
+</table>

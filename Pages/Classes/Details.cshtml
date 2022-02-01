@@ -1,0 +1,37 @@
+﻿@page
+@model ResearchLab.Pages.Classes.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LabClasses</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LabClasses.ClassName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LabClasses.ClassName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LabClasses.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LabClasses.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LabClasses.LabType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LabClasses.LabType)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.LabClasses.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

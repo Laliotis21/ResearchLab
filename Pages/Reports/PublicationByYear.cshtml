@@ -1,0 +1,52 @@
+﻿@page
+@model ResearchLab.Pages.Reports.PublicationByYearModel
+
+
+
+@using (Html.BeginForm("PublicationByYear", "Reports", FormMethod.Get))
+{
+ <div class="form-actions no-color">
+                  
+   Names @Html.DropDownList("Names" , Model.AvailableMembers )
+    Year @Html.TextBox("year")
+    <input id="Sudmit1" type="submit" value="filter" class="btn btn-primary" />
+</div>    
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberPublishedByYear[0].MemberName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberPublishedByYear[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberPublishedByYear[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberPublishedByYear[0].Published)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MemberPublishedByYear) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Published)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
