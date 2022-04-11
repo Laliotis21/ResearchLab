@@ -1,0 +1,39 @@
+﻿@page
+@model ResearchLab.Pages.Reports.PublicationByCategoryModel
+
+@{
+    ViewData["Title"] = "PublicationByCategory";
+}
+
+<h1>PublicationByCategory</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MembersPublications[0].Member.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MembersPublications[0].Publication.Title)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.MembersPublications[0].Publication.Published)
+            </th>
+         </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MembersPublications) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publication.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publication.Published)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
