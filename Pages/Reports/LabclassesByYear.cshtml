@@ -1,0 +1,54 @@
+﻿@page
+@model ResearchLab.Pages.Reports.LabclassesByYearModel
+
+@using (Html.BeginForm("LabclassesByYear", "Reports", FormMethod.Get))
+{
+ <div class="form-actions no-color">
+                  
+   MemberName @Html.DropDownList("MemberName" , Model.AvailableMembers )
+    Year @Html.TextBox("years")
+    <input id="Sudmit1" type="submit" value="Search" class="btn btn-primary" />
+</div>    
+}
+<table class="table">
+    <thead>
+        <tr>
+               <th>
+                @Html.DisplayNameFor(model => model.LabClassesByYear[0].ClassName)
+            </th>
+                       <th>
+                @Html.DisplayNameFor(model => model.LabClassesByYear[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LabClassesByYear[0].LabType)
+            </th>
+         
+            <th>
+                @Html.DisplayNameFor(model => model.LabClassesByYear[0].YearTaught)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.LabClassesByYear) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+       
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabType)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.YearTaught)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
