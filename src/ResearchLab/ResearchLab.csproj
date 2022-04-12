@@ -33,7 +33,8 @@
     <PackageReference Include="System.Windows.Forms.Ribbon35" Version="3.5.8" />
     <PackageReference Include="WaffleGenerator.Bogus" Version="4.2.1" />
   </ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\ResearchLab_Library\ResearchLab_Library.csproj" />
-	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ResearchLab_Library\ResearchLab_Library.csproj" />
+  </ItemGroup>
  </Project>
